@@ -29,7 +29,7 @@ jobs:
         uses: Platane/snk/svg-only@v2
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: dist/commit-snake.svg
+          outputs: dist/commit-snake.svg?palette=github-dark
 
       # The content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file>
       - name: push commit-snake.svg to the output branch
