@@ -26,10 +26,12 @@ jobs:
     steps:
       # Generates a snake game from a github user's contributions graph, outputs a svg animation
       - name: generate commit-snake.svg
-        uses: Platane/snk/svg-only@v2
+        uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: dist/commit-snake.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # The content will be available at https://raw.githubusercontent.com/<github_user>/<repository>/<target_branch>/<file>
       - name: push commit-snake.svg to the output branch
